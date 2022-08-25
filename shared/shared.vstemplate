@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>shared</Name>
+    <Description>The Shared SQL Code that is independent of Platform</Description>
+    <ProjectType>SQLDB</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>shared</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="shared.sqlproj" File="shared.sqlproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties" />
+      <Folder Name="src" TargetFolderName="src">
+        <Folder Name="Databases" TargetFolderName="Databases">
+          <Folder Name="Security" TargetFolderName="Security">
+            <Folder Name="Schemas" TargetFolderName="Schemas">
+              <ProjectItem ReplaceParameters="true" TargetFileName="default_data.sql">default_data.sql</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="demo_data.sql">demo_data.sql</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="dwcore.sql">dwcore.sql</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

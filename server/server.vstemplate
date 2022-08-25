@@ -1,0 +1,38 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>server</Name>
+    <Description>MSSQL 2019 Database Project Template</Description>
+    <ProjectType>SQLDB</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>server</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="server.sqlproj" File="server.sqlproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties" />
+      <Folder Name="publish" TargetFolderName="publish">
+        <ProjectItem ReplaceParameters="true" TargetFileName="localdb.publish.xml">localdb.publish.xml</ProjectItem>
+      </Folder>
+      <Folder Name="src" TargetFolderName="src">
+        <Folder Name="Databases" TargetFolderName="Databases">
+          <Folder Name="Security" TargetFolderName="Security" />
+        </Folder>
+        <Folder Name="Management" TargetFolderName="Management" />
+        <Folder Name="Polybase" TargetFolderName="Polybase" />
+        <Folder Name="Replicate" TargetFolderName="Replicate" />
+        <Folder Name="Security" TargetFolderName="Security">
+          <Folder Name="Logins" TargetFolderName="Logins" />
+          <Folder Name="Server Roles" TargetFolderName="Server Roles" />
+        </Folder>
+        <Folder Name="Server Objects" TargetFolderName="Server Objects" />
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

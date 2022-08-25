@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" Type="ProjectGroup"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name>Deepwork Framework Base SQL Project Template</Name>
+        <Description>Sets up an environment to allow for build/release differences in Azure SQL Database and MSSQL Server 2019 by splitting the code that is different but sharing the platform independent code.</Description>
+	    <ProjectType>SQLDB</ProjectType>        
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1000</SortOrder>
+	    <CreateNewFolder>true</CreateNewFolder>
+    	<DefaultName>NewSQLProject</DefaultName>
+    	<ProvideDefaultName>true</ProvideDefaultName>
+    	<LocationField>Enabled</LocationField>
+    	<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    	<CreateInPlace>true</CreateInPlace>
+    	<Icon>__TemplateIcon.ico</Icon>
+        <LanguageTag> T-SQL </LanguageTag>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectCollection>
+            <ProjectTemplateLink ProjectName="azure">
+                azure\azure.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="server">
+                server\server.vstemplate
+            </ProjectTemplateLink>
+	        <ProjectTemplateLink ProjectName="shared">
+                shared\shared.vstemplate
+            </ProjectTemplateLink>
+        </ProjectCollection>
+        <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$_base.sln">base.sln</ProjectItem>
+    </TemplateContent>
+</VSTemplate>
